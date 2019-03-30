@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>banner_01</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .banner-container {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+    .list {
+      position: relative;
+      width: 590px;
+      height: 470px;
+    }
+    .item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(./images/default.gif) no-repeat center center;
+      list-style: none;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .item.now {
+      opacity: 1;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .icons{
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      font-size: 0;
+    }
+    .icon {
+      display: inline-block;
+      margin-right: 10px;
+      width: 10px;
+      height: 10px;
+      background: indianred;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .icon.now {
+      background: navy;
+    }
+    .prev, .next {
+      width: 30px;
+      height: 60px;
+      background: rgba(0, 0, 0, .3);
+      cursor: pointer;
+    }
+    .prev {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    .prev:hover {
+      background: rgba(255, 255, 255, .3);
+    }
+    .next {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    .next:hover {
+      background: rgba(255, 255, 255, .3);
+    }
+  </style>
+</head>
+<body>
+  <section class="banner-container" id="bannerCon">
+    <ul class="list">
+      <li class="item"><img data-src="./images/1.jpg"></li>
+      <li class="item"><img data-src="./images/2.jpg"></li>
+      <li class="item"><img data-src="./images/3.jpg"></li>
+      <li class="item"><img data-src="./images/4.jpg"></li>
+      <li class="item"><img data-src="./images/5.jpg"></li>
+      <li class="item"><img data-src="./images/6.jpg"></li>
+      <li class="item"><img data-src="./images/7.jpg"></li>
+    </ul>
+    <div class="prev" id="prevBtn"></div>
+    <div class="next" id="nextBtn"></div>
+    <div class="icons"></div>
+  </section>
+  <script src="./js/banner_01.js"></script>
+  <script>
+    new Banner(document.getElementById('bannerCon'))
+  </script>
+</body>
+</html>
